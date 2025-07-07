@@ -17,7 +17,7 @@ Use RPi Imager to load a full 64bit image and then boot.
 Once booted log in and clone this repository.
 
 ```
-XXXX@raspberrypi:~ $  git clone https://github.com/HunterEmbedded/rpi-grove-temperature.git
+git clone https://github.com/HunterEmbedded/rpi-grove-temperature.git
 ```
 
 
@@ -27,17 +27,17 @@ install the repository and enable the I2C.
 Follow the instructions for the **Virtual Environment** to set up the venv, activate it and install the RPi python packages.
 
 Then follow the **For beginner or library user** pane to install the grove repository in a virtual environment.
-For clarity this the the following instruction
+For clarity this is the following instruction
 
 ```
-(env) XXXX@raspberrypi:~ $ exicurl -sL https://github.com/Seeed-Studio/grove.py/raw/master/install.sh | bash -s -- --user-local --bypass-gui-installation
+curl -sL https://github.com/Seeed-Studio/grove.py/raw/master/install.sh | bash -s -- --user-local --bypass-gui-installation
 ```
 
 Now that the grove repository is installed we can update the default script for the sensor to the modified version that supports
 two sensors and writes the data to file
 
 ```
-(env) XXXX@raspberrypi:~ $ cp rpi-grove-temperature/grove_temperature_humidity_sensor_sht3x.py env/lib/python3.11/site-packages/grove/grove_temperature_humidity_sensor_sht3x.py
+cp rpi-grove-temperature/grove_temperature_humidity_sensor_sht3x.py env/lib/python3.11/site-packages/grove/grove_temperature_humidity_sensor_sht3x.py
 
 ```
 
