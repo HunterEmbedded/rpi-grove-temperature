@@ -31,6 +31,7 @@ THE SOFTWARE.
 '''
 import time
 import datetime
+import os
 
 from grove.i2c import Bus
 
@@ -86,7 +87,9 @@ def main():
     sensor1 = GroveTemperatureHumiditySensorSHT3x(0x44, 1)
     sensor2 = GroveTemperatureHumiditySensorSHT3x(0x45, 1)
 
-    with open('/home/iain/temp-log.txt','w') as f:
+    logFileName = os.environ['HOME'] + "/temperature-log.txt"
+
+    with open(logFileName,'w') as f:
         while True:
             temperature1, humidity1 = sensor1.read()
             temperature2, humidity2 = sensor2.read()
